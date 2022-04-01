@@ -1,0 +1,31 @@
+{% block paymentwall_payment_method_block %}
+    <div class="custom-control custom-radio payment-control pw-payment-method payment-method">
+        <div class="payment-form-group form-group">
+            {% block paymentwall_payment_method_input %}
+                <input type="radio"
+                       id="paymentMethod{{ payment.id }}"
+                       name="paymentMethodId"
+                       value="{{ paymentwallData.paymentwallPaymentId }}" checked="checked"
+                       {% if payment.id is same as('test') %}checked="checked"{% endif %}
+                       class="custom-control-input payment-method-input" data-pw-payment-method="{{ payment|json_encode() }}">
+            {% endblock %}
+
+            {% block component_payment_method_label %}
+                <label class="custom-control-label payment-method-label"
+                       for="paymentMethod{{ payment.id }}">
+                    {% block component_payment_method_image %}
+                        {% if payment.img_url %}
+                            <img src="{{ payment.img_url }}"  title="{{ payment.name }}" alt="{{ payment.name }}"/>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block paymentwall_component_payment_method_description %}
+                        <div class="payment-method-description">
+                            <strong>{{ payment.name }}</strong>
+                        </div>
+                    {% endblock %}
+                </label>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

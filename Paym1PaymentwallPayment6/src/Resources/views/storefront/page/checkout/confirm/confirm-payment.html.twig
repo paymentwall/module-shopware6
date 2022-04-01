@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/page/checkout/confirm/confirm-payment.html.twig' %}
+
+{# @deprecated tag:v6.4.0.0 renamed to page_checkout_change_payment_form #}
+{# will include new component/payment/payment-form.html.twig in v6.4.0.0 #}
+{% block page_checkout_confirm_payment_current %}
+    {% set paymentwallData = page.extensions[constant('Paym1PaymentwallPayment6\\Components\\Extension\\PaymentwallDataExtension::PAYMENTWALL_DATA_EXTENSION_NAME')] %}
+
+    {% if paymentwallData.selectedPaymentMethod %}
+        <p class="confirm-payment-current">
+            <strong>Current selection:</strong>
+            {{ paymentwallData.selectedPaymentMethod.name }}
+        </p>
+    {% else %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
