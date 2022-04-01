@@ -1,0 +1,11 @@
+.pw-payment-method {
+  img {
+    width: auto;
+    max-height: 35px;
+    margin-top: -.5rem;
+  }
+  &.payment-method {
+    border-bottom: 1px solid #bcc1c7;
+    margin-bottom: 1rem;
+  }
+}

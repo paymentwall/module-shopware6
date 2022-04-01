@@ -1,0 +1,8 @@
+{
+  "pw-button-validate-credential": {
+    "title": "Paymentwall",
+    "success": "Connection was successfully tested",
+    "error": "Connection could not be established. Please check your Project Key and Secret Key settings",
+    "button": "Test Connection"
+  }
+}

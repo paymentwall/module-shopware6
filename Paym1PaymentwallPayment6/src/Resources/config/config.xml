@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>Basic Configuration</title>
+        <title lang="de-DE">Grundkonfiguration</title>
+        <input-field>
+            <name>projectKey</name>
+            <label>Project Key</label>
+            <label lang="de-DE">Projektschlüssel</label>
+            <required>true</required>
+        </input-field>
+        <input-field>
+            <name>secretKey</name>
+            <label>Secret Key</label>
+            <label lang="de-DE">Geheimer Schlüssel</label>
+            <required>true</required>
+        </input-field>
+        <component name="pw-button-validate-credential">
+            <name>apiTest</name>
+        </component>
+    </card>
+    <card>
+        <title>Extended Configuration</title>
+        <title lang="de-DE">Erweiterte Konfiguration</title>
+        <input-field>
+            <name>widgetCode</name>
+            <label>Widget Code</label>
+            <label lang="de-DE">Widget-Code</label>
+            <required>false</required>
+        </input-field>
+        <input-field type="bool">
+            <name>isRefundEnabled</name>
+            <label>Refund payment when cancel Order</label>
+            <label lang="de-DE">Rückerstattung der Zahlung bei Stornierung der Bestellung</label>
+        </input-field>
+        <input-field type="bool">
+            <name>testMode</name>
+            <label>Test Mode</label>
+            <label lang="de-DE">Testmodus</label>
+        </input-field>
+    </card>
+</config>

@@ -1,0 +1,33 @@
+{
+    "name": "pw/paymentwall",
+    "type": "shopware-platform-plugin",
+    "description": "Paymentwall plugin for Shopware v6",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paymentwall Team"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.3 - 6.4"
+    },
+    "extra": {
+        "shopware-plugin-class": "Paym1PaymentwallPayment6\\Paym1PaymentwallPayment6",
+        "label": {
+            "de-DE": "Paymentwall",
+            "en-GB": "Paymentwall"
+        }
+    },
+    "suggest": {
+        "../../../vendor/shopware/administration": "Enables Paymentwall to be operated via Shopware 6 administration frontend.",
+        "../../../vendor/shopware/storefront": "Enables Paymentwall methods in the Shopware 6 Storefront."
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Paym1PaymentwallPayment6\\": "src/"
+        }
+    }
+
+}

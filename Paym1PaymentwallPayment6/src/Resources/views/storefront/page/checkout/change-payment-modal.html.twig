@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/checkout/change-payment-modal.html.twig' %}
+{% block page_checkout_change_payment_form_redirect %}
+    {% set paymentwallData = page.extensions[constant('Paym1PaymentwallPayment6\\Components\\Extension\\PaymentwallDataExtension::PAYMENTWALL_DATA_EXTENSION_NAME')] %}
+    {{ parent() }}
+    {% if paymentwallData.paymentMethods %}
+        <div data-pw-payment-methods-wrapper="true" data-url="{{ rawUrl('paymentwall.save.paymentsystem') }}">
+        {% for payment in paymentwallData.paymentMethods %}
+            {% include 'storefront/paymentwall/checkout/payment-method-template.html.twig'%}
+        {% endfor %}
+        </div>
+        <style>
+            #confirmPaymentForm .payment-methods .payment-method:first-child {
+                display: none;
+            }
+        </style>
+    {% endif %}
+    <script>
+        window.paymentwall = {'save.paymentsystem' : '{{ rawUrl('paymentwall.save.paymentsystem') }}' }
+    </script>
+{% endblock %}

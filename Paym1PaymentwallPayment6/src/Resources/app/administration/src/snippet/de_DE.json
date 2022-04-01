@@ -1,0 +1,8 @@
+{
+  "pw-button-validate-credential": {
+    "title": "Paymentwall",
+    "success": "Verbindung wurde erfolgreich getestet",
+    "error": "Verbindung konnte nicht hergestellt werden. Bitte überprüfen Sie Ihre Einstellungen für den Projektschlüssel und den Geheimen Schlüssel",
+    "button": "Verbindung Testen"
+  }
+}
